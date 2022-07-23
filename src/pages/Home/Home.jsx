@@ -56,7 +56,7 @@ export const Home = () => {
               </div>
               <div><button className='btn_status'> {d.status} </button></div>
               <div >
-                <MenuButton />             
+                <MenuButton id={d.id}/>             
                </div>
             </div>
           ))}

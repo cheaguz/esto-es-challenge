@@ -2,8 +2,10 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from 'react-router-dom'
 
-export const MenuButton = ()=> {
+export const MenuButton = ({id})=> {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -12,6 +14,17 @@ export const MenuButton = ()=> {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+const handleEdit = () => {
+  navigate(`/edit-project/${id}`)
+  handleClose()
+};
+
+const handleDelete = () => {
+  handleClose()
+  console.log(`Eliminado ${id}`)
+ 
+}
 
   return (
     <div>
@@ -62,11 +75,11 @@ export const MenuButton = ()=> {
           anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
 
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleEdit}>
             <img src='assets/icons/edit.png' alt='icon-edit'/> 
                 Edit
-            </MenuItem>
-            <MenuItem onClick={handleClose}>
+            </MenuItem >
+            <MenuItem onClick={handleDelete}>
             <img src='assets/icons/delete.png' alt='icon-delete'/>
                 Delete
             </MenuItem>
