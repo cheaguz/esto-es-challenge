@@ -1,17 +1,21 @@
 import React from 'react'
 import './Home.styles.css';
+import { useNavigate } from 'react-router-dom'
+
 import { useProject } from '../../hooks/useProject';
 import { takeInitials } from '../../utils/takeInitials';
 import { MenuButton } from './MenuButton';
+
  
 export const Home = () => {
   const { data } = useProject();
+  const navigate = useNavigate();
 
   return (
     <div className='home'>
       <div className='SubHeader'>
         <h1> My projects </h1>
-        <button> + Add project</button>
+        <button onClick={()=> navigate('/new-project')}> + Add project</button>
       </div>
       <section>
         <div className='wrapper'>

@@ -1,5 +1,6 @@
 export const dataMock = [
     {
+        id : 1,
         title: "Landing page",
         date: "09/09/2020 10:30 am",
         projectManager: {name :"Walt cosani" , image : ''},
@@ -7,6 +8,7 @@ export const dataMock = [
         status: "Enabled"
     },
     {
+        id : 2,
         title: "E-Commerce Shop",
         date: "09/09/2020 10:30 am",
         projectManager: {name :"Walt Cosani" , image : ''},
@@ -14,6 +16,7 @@ export const dataMock = [
         status: "Enabled"
     },
     {
+        id : 3,
         title: "CRM Linkroom",
         date: "09/09/2020 10:30 am",
         projectManager: {name :"Walt Cosani" , image : ''},
