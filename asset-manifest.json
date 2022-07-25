@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/esto-es-challenge/static/css/main.a817e195.css",
+    "main.js": "/esto-es-challenge/static/js/main.65c8ec5f.js",
+    "static/js/787.eae4241c.chunk.js": "/esto-es-challenge/static/js/787.eae4241c.chunk.js",
+    "index.html": "/esto-es-challenge/index.html",
+    "main.a817e195.css.map": "/esto-es-challenge/static/css/main.a817e195.css.map",
+    "main.65c8ec5f.js.map": "/esto-es-challenge/static/js/main.65c8ec5f.js.map",
+    "787.eae4241c.chunk.js.map": "/esto-es-challenge/static/js/787.eae4241c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a817e195.css",
+    "static/js/main.65c8ec5f.js"
+  ]
+}
