@@ -1,22 +1,22 @@
-import './App.css';
 import { Routes, Route} from 'react-router-dom'
 
-import { Header } from './components/Header/Header';
-import { Home } from './pages/Home/Home';
-import { AddProject } from './pages/AddProject/AddProject';
-import { EditProject } from './pages/EditProject/EditProject'
+
+import { Header } from './components/Header';
+import { Home } from './pages/Home';
+import { NewProject } from './pages/NewProject';
+import { EditProject } from './pages/EditProject'
+
 
 function App() {
   return (
-    <div className='App'>
-    <Header />
-    <Routes>
-     <Route path='/' element={ <Home /> } /> 
-     <Route path='/new-project' element={ <AddProject /> } /> 
-     <Route path='/edit-project/:id' element={ <EditProject /> } /> 
-
-    </Routes>
-    </div>
+      <>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} /> 
+          <Route path='/new-project' element={<NewProject />} /> 
+          <Route path='/edit-project/:id' element={<EditProject />} /> 
+        </Routes>
+      </>
   );
 }
 

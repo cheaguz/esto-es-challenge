@@ -1,10 +1,22 @@
-import { dataMock } from "../utils/DataMock";
+import axios from "axios";
+const baseURL = process.env.REACT_APP_API
 
 export const getProjects = () => {
-    const response = dataMock
-    return response
+    return axios.get(`${baseURL}`)
 }
 
 export const newProject = (data) => {
-    console.log('success',data)
+    return axios.post(`${baseURL}`,data)
+}
+
+export const getById = (id) => {
+    return axios.get(`${baseURL}/${id}`)
+}
+
+export const deleteProject = (id) => {
+    return axios.delete(`${baseURL}/${id}`)
+} 
+
+export const putProject = (id,data) => {
+    return axios.put(`${baseURL}/${id}` , data)
 }

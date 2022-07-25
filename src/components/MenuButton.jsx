@@ -1,10 +1,14 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import { MenuItem, Menu } from '@mui/material'  
 import { useNavigate } from 'react-router-dom'
+import { useDispatch  } from 'react-redux';
+import { deleteById } from '../redux/projectActions';
+import Swal from "sweetalert2";
 
-export const MenuButton = ({id})=> {
+
+export const MenuButton = ({id , data})=> {
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -15,28 +19,48 @@ export const MenuButton = ({id})=> {
     setAnchorEl(null);
   };
 
+
+
+
 const handleEdit = () => {
+  localStorage.setItem('data',JSON.stringify(data))
   navigate(`/edit-project/${id}`)
   handleClose()
 };
 
 const handleDelete = () => {
+  Swal.fire({
+    title: 'Eliminar proyecto ?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes!'
+    })
+    .then((result) => {
+    if (result.isConfirmed) {
+      dispatch( deleteById(id) )
+    }
+  })
   handleClose()
-  console.log(`Eliminado ${id}`)
- 
 }
+
+
+
 
   return (
     <div>
-      <Button
-        id="basic-button"
+      <button
+        id='btn-subHeader'
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-        ...
-      </Button>
+        <img src='assets/icons/puntos.png'  alt='points' />
+      </button>
+
+
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
